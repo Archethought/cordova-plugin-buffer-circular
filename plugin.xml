@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="com.archethough.cordova.buffer_circular" version="0.0.1">
+  <name>Circular Buffer</name>
+  <description>Cordova Circular Buffer Plugin</description>
+  <license>Apache 2.0</license>
+  <keywords>cordova,buffer,circular</keywords>
+  <js-module src="www/buffer_circ.js" name="buffer_circ">
+    <clobbers target="buffer_circ" />
+  </js-module>
+  <platform name="ios">
+    <config-file target="config.xml" parent="/*">
+      <feature name="BufferCircular">
+        <param name="ios-package" value="CDVBufferCircular"/>
+      </feature>
+    </config-file>
+    <header-file src="src/ios/CDVBufferCircular.h" />
+    <source-file src="src/ios/CDVBufferCircular.m" />
+  </platform>
+</plugin>
+

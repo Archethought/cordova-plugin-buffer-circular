@@ -23,6 +23,8 @@
         <param name="android-package" value="com.archethought.cordovaplugins.buffers.Circular" />
       </feature>
     </config-file>
+    
+    <source-file src="src/android/Circular.java" target-dir="src/com/archethought/cordovaplugins/buffers" />
   </platform>
   
   <!--<platform name="ios">

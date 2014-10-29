@@ -54,7 +54,7 @@ public class Circular extends CordovaPlugin {
     
     /***
      * Pop function
-     *   Return the string at the beginning of the buffer and remove it.
+     *   Return the item at the beginning of the buffer and remove it.
      ***/
     public String pop() {
         // Save the first item off the list.
@@ -67,24 +67,36 @@ public class Circular extends CordovaPlugin {
     
     /***
      * Peek function
-     *   Return the string at the beginning of the buffer without removing it.
+     *   Return the item at the beginning of the buffer without removing it.
      ***/
+    public String peek() {
+        return this.buffer[ 0];
+    }
     
     /***
      * Count function
-     *   Return the number of strings in the buffer.
-     *   - If first and last are equal, the buffer is empty.
+     *   Return the number of item in the buffer.
      ***/
+    public int count() {
+        return this.buffer.size();
+    }
     
     /***
-     * Size function
+     * Max Size function
      *   Return the number of items the buffer can hold.
      ***/
+    public int maxCount() {
+        return this.max;
+    }
     
     /***
      * Clear function
      *   Reset the buffer to an empty state.
      ***/
+    public void clear() {
+        this.buffer = new ArrayList<String>( this.max);
+        return;
+    }
     
     /*** PRIVATE FUNCTIONS ***/
     

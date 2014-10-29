@@ -1,13 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="com.archethough.cordova.buffer.circular" version="0.0.1">
-  <name>Circular Buffer</name>
-  <description>Cordova Circular Buffer Plugin</description>
-  <license>Apache 2.0</license>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="com.archethought.cordovaplugin.buffers"
+        version="0.0.1">
+  
+  <engines>
+    <engine name="cordova" version=">=3.1.0" />
+  </engines>
+  
+  <name>Archethought Circular Buffer</name>
+  <description>This is a circular buffer plugin for Cordova, which provides a native level circular buffer.</description>
+  <author>Archethought, LLC</author>
   <keywords>cordova,buffer,circular</keywords>
+  <license>Apache 2.0</license>
+  
   <js-module src="www/buffer_circ.js" name="buffer_circ">
     <clobbers target="buffer_circ" />
   </js-module>
-  <platform name="ios">
+  
+  <platform name="android">
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="bufferCircular">
+        <param name="android-package" value="com.archethought.cordovaplugins.buffers.Circular" />
+      </feature>
+    </config-file>
+  </platform>
+  
+  <!--<platform name="ios">
     <config-file target="config.xml" parent="/*">
       <feature name="BufferCircular">
         <param name="ios-package" value="CDVBufferCircular"/>
@@ -15,6 +33,6 @@
     </config-file>
     <header-file src="src/ios/CDVBufferCircular.h" />
     <source-file src="src/ios/CDVBufferCircular.m" />
-  </platform>
+  </platform>-->
 </plugin>
 

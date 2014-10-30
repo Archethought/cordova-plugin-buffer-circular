@@ -33,7 +33,7 @@ public class Circular extends CordovaPlugin {
         // Initialization of the goodies.
         // Defaulting the buffer to 300.  May increase this later.
         this.max = 300;
-        this.buffer = new ArrayList<String>( max)
+        this.buffer = new ArrayList<String>( max);
     }
     
     @Override

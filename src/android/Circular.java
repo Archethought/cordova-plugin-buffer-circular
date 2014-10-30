@@ -106,7 +106,7 @@ public class Circular extends CordovaPlugin {
      ***/
     public void pop( CallbackContext callbackContext) {
         // Save the first item off the list.
-        String temp = this.buffer[ 0];
+        String temp = this.buffer.get( 0);
         // Remove the first item.
         this.buffer.remove( 0);
         // Return that item.
@@ -120,7 +120,7 @@ public class Circular extends CordovaPlugin {
      *   Value ( String) is returned using the callback context.
      ***/
     public void peek( CallbackContext callbackContext) {
-        callbackContext.success( this.buffer[ 0]);
+        callbackContext.success( this.buffer.get( 0));
         return;
     }
     
@@ -160,7 +160,7 @@ public class Circular extends CordovaPlugin {
      ***/
     public void setCapacity( int newCapacity, CallbackContext callbackContext) {
         this.max = newCapacity;
-        this.buffer.censureCapacity( this.max);
+        this.buffer.ensureCapacity( this.max);
         callbackContext.success();
         return;
     }

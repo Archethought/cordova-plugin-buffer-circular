@@ -105,12 +105,18 @@ public class Circular extends CordovaPlugin {
      *   Value ( String) is returned using the callback context.
      ***/
     public void pop( CallbackContext callbackContext) {
-        // Save the first item off the list.
-        String temp = this.buffer.get( 0);
-        // Remove the first item.
-        this.buffer.remove( 0);
-        // Return that item.
-        callbackContext.success( temp);
+        // If empty, return an empty string
+        if( this.isEmpty) {
+            // This should probably throw an error instead of returning an empty string.
+            callbackContext.success( "");
+        } else {
+            // Save the first item off the list.
+            String temp = this.buffer.get( 0);
+            // Remove the first item.
+            this.buffer.remove( 0);
+            // Return that item.
+            callbackContext.success( temp);
+        }
         return;
     }
     
@@ -120,7 +126,16 @@ public class Circular extends CordovaPlugin {
      *   Value ( String) is returned using the callback context.
      ***/
     public void peek( CallbackContext callbackContext) {
-        callbackContext.success( this.buffer.get( 0));
+        // If empty, return an empty string
+        if( this.isEmpty) {
+            // This should probably throw an error instead of returning an empty string.
+            callbackContext.success( "");
+        } else {
+            // Save the first item off the list.
+            String temp = this.buffer.get( 0);
+            // Return that item.
+            callbackContext.success( temp);
+        }
         return;
     }
     
@@ -174,5 +189,14 @@ public class Circular extends CordovaPlugin {
     private boolean isFull() {
         // Compare the size (number of items in the buffer) to the max allowed.
         return this.buffer.size() == this.max;
+    }
+    
+    /***
+     * Check If Empty function
+     *   Return true if the buffer is empty.
+     ***/
+    private boolean isEmpty() {
+        // Compare the size (number of items in the buffer) to 0.
+        return this.buffer.size() == 0;
     }
 }

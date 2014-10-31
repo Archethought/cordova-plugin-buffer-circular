@@ -82,6 +82,6 @@ exports.clear = function() {
 * @example
 buffer_circ.setCapacity( maxCapacity);
 */
-exports.push = function( maxCapacity) {
+exports.setCapacity = function( maxCapacity) {
     exec( null, null, 'buffer_circ', 'setCapacity', [ maxCapacity]);
 };

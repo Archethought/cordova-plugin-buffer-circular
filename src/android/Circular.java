@@ -106,7 +106,7 @@ public class Circular extends CordovaPlugin {
      ***/
     public void pop( CallbackContext callbackContext) {
         // If empty, return an empty string
-        if( this.isEmpty) {
+        if( this.isEmpty()) {
             // This should probably throw an error instead of returning an empty string.
             callbackContext.success( "");
         } else {
@@ -127,7 +127,7 @@ public class Circular extends CordovaPlugin {
      ***/
     public void peek( CallbackContext callbackContext) {
         // If empty, return an empty string
-        if( this.isEmpty) {
+        if( this.isEmpty()) {
             // This should probably throw an error instead of returning an empty string.
             callbackContext.success( "");
         } else {

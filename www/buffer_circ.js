@@ -14,7 +14,7 @@ var exec = cordova.require('cordova/exec');
 buffer_circ.push( string);
 */
 exports.push = function( string) {
-    exec( null, null, 'Circular', 'push', [ string]);
+    exec( null, null, 'buffer_circ', 'push', [ string]);
 };
 
 /** Pop an item out of the buffer.
@@ -27,7 +27,7 @@ buffer_circ.pop(
 );
 */
 exports.pop = function( resultCallback) {
-    exec( resultCallback, null, 'Circular', 'pop', []);
+    exec( resultCallback, null, 'buffer_circ', 'pop', []);
 };
 
 /** Peek at the next item out of the buffer.
@@ -40,7 +40,7 @@ buffer_circ.peek(
 );
 */
 exports.peek = function( resultCallback) {
-    exec( resultCallback, null, 'Circular', 'peek', []);
+    exec( resultCallback, null, 'buffer_circ', 'peek', []);
 };
 
 /** Get the number of items in the buffer.
@@ -53,7 +53,7 @@ buffer_circ.count(
 );
 */
 exports.count = function( resultCallback) {
-    exec( resultCallback, null, 'Circular', 'count', []);
+    exec( resultCallback, null, 'buffer_circ', 'count', []);
 };
 
 /** Get the number of items the buffer can hold.
@@ -66,7 +66,7 @@ buffer_circ.capacity(
 );
 */
 exports.capacity = function( resultCallback) {
-    exec( resultCallback, null, 'Circular', 'capacity', []);
+    exec( resultCallback, null, 'buffer_circ', 'capacity', []);
 };
 
 /** Clear the buffer out.
@@ -74,7 +74,7 @@ exports.capacity = function( resultCallback) {
 buffer_circ.clear();
 */
 exports.clear = function() {
-    exec( null, null, 'Circular', 'clear', []);
+    exec( null, null, 'buffer_circ', 'clear', []);
 };
 
 /** Set the number of item the buffer can hold.
@@ -83,5 +83,5 @@ exports.clear = function() {
 buffer_circ.setCapacity( maxCapacity);
 */
 exports.push = function( maxCapacity) {
-    exec( null, null, 'Circular', 'setCapacity', [ maxCapacity]);
+    exec( null, null, 'buffer_circ', 'setCapacity', [ maxCapacity]);
 };
